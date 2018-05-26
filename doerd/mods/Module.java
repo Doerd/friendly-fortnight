@@ -43,13 +43,25 @@ public class Module {
 	
 	public void parseSettings(){}
 	public void settingsFromFile(){
+		String filename = "";
 		String content = "";
         Scanner in = null;
-        
+        //put texpath.txt in "jars" directory. This contains path to your folder w/ txts
+        //System.getProperty("user.dir")); <-- (or wherever this tells you to)
+        try {
+        	in = new Scanner(new FileReader(
+            		"textpath.txt"));
+            filename += in.nextLine();
+        	in.close();
+		}catch(FileNotFoundException e){
+	        this.settings = "";
+	    }catch(Exception e2){
+	    	e2.printStackTrace();
+	    }
+                
         try{
             in = new Scanner(new FileReader(
-            		"/Users/williamadriance/Desktop/client2/mcp918/completed jars/settings/" 
-            				+ this.name.toLowerCase() + ".txt"));
+            		filename + this.name.toLowerCase() + ".txt"));
             
             while(in.hasNextLine()){
                 content += in.nextLine();
@@ -57,6 +69,7 @@ public class Module {
             }
             
             in.close();
+            
             
             this.settings = content;
         }catch(FileNotFoundException e){

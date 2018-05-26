@@ -118,7 +118,6 @@ public class Autoattack extends Module{
 	}
 	
 	
-
 	public String[] getEntitiesToHit() {
 		return entitiesToHit;
 	}
