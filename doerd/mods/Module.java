@@ -55,6 +55,7 @@ public class Module {
         	in.close();
 		}catch(FileNotFoundException e){
 	        this.settings = "";
+	        e.printStackTrace();
 	    }catch(Exception e2){
 	    	e2.printStackTrace();
 	    }
@@ -74,6 +75,7 @@ public class Module {
             this.settings = content;
         }catch(FileNotFoundException e){
             this.settings = "";
+            e.printStackTrace();
         }catch(Exception e2){
         	e2.printStackTrace();
         }
