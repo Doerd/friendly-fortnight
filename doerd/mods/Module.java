@@ -1,5 +1,6 @@
 package doerd.mods;
 
+import doerd.constant.UserSpecific;
 import doerd.main.Category;
 import net.minecraft.client.Minecraft;
 import java.util.Scanner;
@@ -43,26 +44,12 @@ public class Module {
 	
 	public void parseSettings(){}
 	public void settingsFromFile(){
-		String filename = "";
 		String content = "";
         Scanner in = null;
-        //put texpath.txt in "jars" directory. This contains path to your folder w/ txts
-        //System.getProperty("user.dir")); <-- (or wherever this tells you to)
-        try {
-        	in = new Scanner(new FileReader(
-            		"textpath.txt"));
-            filename += in.nextLine();
-        	in.close();
-		}catch(FileNotFoundException e){
-	        this.settings = "";
-	        e.printStackTrace();
-	    }catch(Exception e2){
-	    	e2.printStackTrace();
-	    }
                 
         try{
             in = new Scanner(new FileReader(
-            		filename + this.name.toLowerCase() + ".txt"));
+            		UserSpecific.filePath + this.name.toLowerCase() + ".txt"));
             
             while(in.hasNextLine()){
                 content += in.nextLine();
@@ -70,7 +57,6 @@ public class Module {
             }
             
             in.close();
-            
             
             this.settings = content;
         }catch(FileNotFoundException e){
