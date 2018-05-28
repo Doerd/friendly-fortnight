@@ -98,7 +98,7 @@ public class LookAssist extends Module{
 						mc.thePlayer.rotationPitch += pitchDiff;
 					}
 					
-					if(distSquared > lockRangeSquared){
+					if(!mc.theWorld.getEntityByID(entityID).isEntityAlive() || distSquared > lockRangeSquared){
 						lock = false;
 					}
 				}
