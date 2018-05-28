@@ -61,16 +61,28 @@ public class LookAssist extends Module{
 					double zxDist = Math.sqrt(xDiff*xDiff + zDiff*zDiff);
 					double distSquared = yDiff*yDiff + zxDist*zxDist;
 					
-					float newYaw = (float)(Math.atan2(zDiff, xDiff)*(180/Math.PI)) + 90f;
 					float newPitch = (float)(Math.atan2(yDiff, zxDist)*(180/Math.PI));
+					float newYaw = (float)(Math.atan2(zDiff, xDiff)*(180/Math.PI)) + 90f;
+					if(newYaw < 0){
+						newYaw += 360;
+					}
 					
-					float yawDiff = 0;
 					float pitchDiff = newPitch - mc.thePlayer.rotationPitch;
+					float yawDiff = 0;
 					
-					if(Math.abs(newYaw - mc.thePlayer.rotationYaw%360) > 180){
-						yawDiff = newYaw - (360 + mc.thePlayer.rotationYaw%360);
+					float playerYaw360 = mc.thePlayer.rotationYaw%360;
+					
+					if(playerYaw360 - newYaw > 180){
+						playerYaw360 -= 360;
+					}else if(playerYaw360 - newYaw < -180){
+						playerYaw360 += 360;
+					}
+					
+					if(Math.abs(newYaw - playerYaw360) > 180){
+						System.out.println(newYaw);
+						yawDiff = newYaw - (360 + playerYaw360);
 					}else{
-						yawDiff = newYaw - mc.thePlayer.rotationYaw%360;
+						yawDiff = newYaw - playerYaw360;
 					}
 					
 					
