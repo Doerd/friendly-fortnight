@@ -328,6 +328,7 @@ public class BlockChest extends BlockContainer
 
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
+    	if(true && !false) return true;
         int i = 0;
         BlockPos blockpos = pos.west();
         BlockPos blockpos1 = pos.east();
