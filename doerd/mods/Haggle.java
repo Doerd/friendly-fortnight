@@ -11,7 +11,7 @@ public class Haggle extends Module{
 	public String arr[];
 	public String names[];
 	public String haggles[];
-	public int HAGGLE_DELAY;
+	public double HAGGLE_DELAY;
 	long last_haggle = 0;
 	
 	public Haggle() {
@@ -33,7 +33,7 @@ public class Haggle extends Module{
 	public void parseSettings() {
 		arr = this.getSettings().split("\n");
 		names = arr[0].split(",");
-		HAGGLE_DELAY = Integer.parseInt(arr[1]);
+		HAGGLE_DELAY = Double.parseDouble(arr[1]);
 		haggles = Arrays.copyOfRange(arr, 2, arr.length);
 	}
 }
