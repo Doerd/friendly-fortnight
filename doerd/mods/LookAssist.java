@@ -110,6 +110,7 @@ public class LookAssist extends Module{
 	}
 	
 	public void decideToLock(){
+		System.out.println(mc.objectMouseOver.entityHit);
 		for(String s : this.lockEntities){
 			if(s.equalsIgnoreCase("Player")){
 				if(mc.objectMouseOver.entityHit instanceof EntityOtherPlayerMP){
