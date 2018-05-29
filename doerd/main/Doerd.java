@@ -21,7 +21,7 @@ public class Doerd {
 		//addMod(new Flight(0.1f));
 		
 		//--testing--
-		//addMod(new RangeLock());
+		addMod(new Haggle());
 	}
 	
 	public void addMod(Module m){
