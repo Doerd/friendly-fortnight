@@ -39,7 +39,9 @@ public class Doerd {
 	
 	public static void onRender(){
 		for(Module m : mods){
-			m.onRender();
+			if(m.isToggled()){
+				m.onRender();
+			}
 		}
 	}
 	
