@@ -8,7 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 public class HideNSeek extends Module{
 
 	public HideNSeek() {
-		super("Hide-N-Seek", Keyboard.KEY_I, Category.RENDER);
+		super("Hide-N-Seek", Keyboard.KEY_Y, Category.RENDER);
 
 	}
 	
