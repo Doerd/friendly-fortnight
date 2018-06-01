@@ -22,6 +22,7 @@ public class Doerd {
 		
 		//--testing--
 		addMod(new Haggle());
+		addMod(new RangeLock());
 	}
 	
 	public void addMod(Module m){

@@ -6,6 +6,7 @@ import org.lwjgl.input.Keyboard;
 
 import doerd.main.Category;
 import doerd.utils.Vector;
+import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.AxisAlignedBB;
 
@@ -35,5 +36,8 @@ public class RangeLock extends Module{
 			double entityPos[] = {e.posX,e.posY,e.posZ};
 			System.out.println(e);
 		}
+	}
+	public void colorOfName(AbstractClientPlayer player) {
+		System.out.println(player.playerInfo.displayName.getChatStyle().color);
 	}
 }
