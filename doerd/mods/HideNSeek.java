@@ -11,6 +11,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityFallingBlock;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.MovingObjectPosition;
 
 public class HideNSeek extends Module{
@@ -41,7 +43,7 @@ public class HideNSeek extends Module{
 				RenderUtils.entityESPBox(e, 0);
 			}
 			else if(e instanceof EntityOtherPlayerMP){
-				RenderUtils.entityESPBox(e, 2);
+				RenderUtils.entityESPBox(e, 1);
 			}
 			
 		}
