@@ -22,6 +22,10 @@ public class HideNSeek extends Module{
 		players = new ArrayList<Integer>();
 	}
 	
+	public void onDisable(){
+		players = new ArrayList<Integer>();
+	}
+	
 	public void onUpdate(){
 		for(Entity e : mc.theWorld.loadedEntityList){
 			if((e instanceof EntityOtherPlayerMP) && (!players.contains(e.getEntityId()))){
@@ -33,10 +37,13 @@ public class HideNSeek extends Module{
 	
 	public void onRender() {
 		for(Entity e : mc.theWorld.loadedEntityList){
-			if((e instanceof EntityFallingBlock) || 
-					(players.contains(e.getEntityId()) && !(e instanceof EntityOtherPlayerMP))){
+			if((e instanceof EntityFallingBlock) || (players.contains(e.getEntityId()) && !(e instanceof EntityOtherPlayerMP))){
 				RenderUtils.entityESPBox(e, 0);
 			}
+			else if(e instanceof EntityOtherPlayerMP){
+				RenderUtils.entityESPBox(e, 2);
+			}
+			
 		}
 		
 		super.onRender();
