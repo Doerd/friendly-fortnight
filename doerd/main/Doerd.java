@@ -13,15 +13,16 @@ public class Doerd {
 	public Doerd(){
 		mods = new ArrayList<Module>();
 		
-		addMod(new TpImmune());
+		addMod(new HideNSeek());
 		addMod(new LookAssist(10, 5, new String[]{}));
 		addMod(new InfoDisplay());
 		addMod(new Move(new DoublePoint[]{}, 0f, 0f));
 		addMod(new Autoattack(5, new String[]{}));
+		addMod(new Haggle());
 		//addMod(new Flight(0.1f));
 		
 		//--testing--
-		addMod(new Haggle());
+		
 	}
 	
 	public void addMod(Module m){
