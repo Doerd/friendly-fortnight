@@ -13,6 +13,7 @@ public class Doerd {
 	public Doerd(){
 		mods = new ArrayList<Module>();
 		
+		addMod(new Freecam());
 		addMod(new HideNSeek());
 		addMod(new LookAssist(10, 5, new String[]{}));
 		addMod(new InfoDisplay());

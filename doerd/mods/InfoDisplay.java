@@ -15,19 +15,23 @@ public class InfoDisplay extends Module{
 	
 	public void customOverlay(){
 		int i = 0;
+        //Position
+        double coords[] = {mc.thePlayer.posX,mc.thePlayer.posY,mc.thePlayer.posZ};
+        String coordDisplay = String.format("(%.2f,%.2f,%.2f)",coords[0],coords[1],coords[2]);
+        this.mc.fontRendererObj.drawStringWithShadow(String.format("%.2f", coords[0]), 2, 100+i, 65280);
+        i += 10;
+        this.mc.fontRendererObj.drawString(String.format("%.2f", coords[1]), 2, 100+i, 16777215);
+        i += 10;
+        this.mc.fontRendererObj.drawStringWithShadow(String.format("%.2f", coords[2]), 2, 100+i, 65280);
+        i += 10;
+        //Direction
+        Vector direction = new Vector(mc.thePlayer.rotationPitch,-1*mc.thePlayer.rotationYaw);
+        this.mc.fontRendererObj.drawString(direction.toString(),2,100+i,16777215);
+        i += 10;
 		//Pitch and Yaw
         this.mc.fontRendererObj.drawString("Pitch: " + mc.thePlayer.rotationPitch, 2, 100+i, 16777215);
         i += 10;
         this.mc.fontRendererObj.drawString("Yaw: " + mc.thePlayer.rotationYaw, 2, 100+i, 16777215);
-        i += 10;
-        //Direction
-        Vector direction = new Vector(mc.thePlayer.rotationPitch,mc.thePlayer.rotationYaw);
-        this.mc.fontRendererObj.drawString(direction.toString(),2,100+i,16777215);
-        i += 10;
-        //Position
-        double coords[] = {mc.thePlayer.posX,mc.thePlayer.posY,mc.thePlayer.posZ};
-        String coordDisplay = String.format("(%.2f,%.2f,%.2f)",coords[0],coords[1],coords[2]);
-        this.mc.fontRendererObj.drawString(coordDisplay, 2, 100+i, 16777215);
         i += 10;
         //Entity
         Entity hit = mc.objectMouseOver.entityHit;

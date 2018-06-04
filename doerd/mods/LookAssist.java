@@ -107,6 +107,7 @@ public class LookAssist extends Module{
 				e.printStackTrace();
 			}
 		}
+		super.onUpdate();
 	}
 	
 	public void decideToLock(){
