@@ -32,7 +32,7 @@ public class GuiIngameHook extends GuiIngame{
         for(Module m : Doerd.getModules()){
         	if(m.isToggled()){
         		m.customOverlay();
-        		this.mc.fontRendererObj.drawString(m.getName(), 2, 2 + count*10, this.colors[count]);
+        		this.mc.fontRendererObj.drawString(m.getName(), 2, 2 + count*10, this.colors[Doerd.getModules().indexOf(m)]);
         		count++;
         	}
         }
