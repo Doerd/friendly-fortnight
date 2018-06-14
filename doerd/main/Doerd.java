@@ -15,6 +15,7 @@ public class Doerd {
 		mods = new ArrayList<Module>();
 		sendMovePackets = true;
 		
+		addMod(new MouseTp());
 		addMod(new Spectate());
 		addMod(new Brightness());
 		addMod(new Freecam());

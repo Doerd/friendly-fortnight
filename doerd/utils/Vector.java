@@ -12,7 +12,7 @@ public class Vector {
 	public Vector(double pitch, double yaw) {
 		double theta = toRads(yaw);
 		double phi = toRads(pitch);
-		this.x = Math.cos(phi)*Math.sin(theta);
+		this.x = -1*Math.cos(phi)*Math.sin(theta);
 		this.y = -1*Math.sin(phi);
 		this.z = Math.cos(phi)*Math.cos(theta);
 	}

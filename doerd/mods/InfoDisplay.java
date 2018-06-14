@@ -25,7 +25,7 @@ public class InfoDisplay extends Module{
         this.mc.fontRendererObj.drawStringWithShadow(String.format("%.2f", coords[2]), 2, 100+i, 65280);
         i += 10;
         //Direction
-        Vector direction = new Vector(mc.thePlayer.rotationPitch,-1*mc.thePlayer.rotationYaw);
+        Vector direction = new Vector(mc.thePlayer.rotationPitch,mc.thePlayer.rotationYaw);
         this.mc.fontRendererObj.drawString(direction.toString(),2,100+i,16777215);
         i += 10;
 		//Pitch and Yaw
