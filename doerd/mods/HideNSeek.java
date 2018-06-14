@@ -39,7 +39,7 @@ public class HideNSeek extends Module{
 	
 	public void onRender() {
 		for(Entity e : mc.theWorld.loadedEntityList){
-			if((e instanceof EntityFallingBlock) || (players.contains(e.getEntityId()) && !(e instanceof EntityOtherPlayerMP))){
+			if((e instanceof EntityFallingBlock) || players.contains(e.getEntityId()) && !(e instanceof EntityOtherPlayerMP)){
 				RenderUtils.entityESPBox(e, 0);
 			}
 			else if(e instanceof EntityOtherPlayerMP){

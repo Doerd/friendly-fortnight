@@ -9,10 +9,13 @@ import doerd.utils.DoublePoint;
 
 public class Doerd {
 	private static ArrayList<Module> mods;
+	public static boolean sendMovePackets;
 	
 	public Doerd(){
 		mods = new ArrayList<Module>();
+		sendMovePackets = true;
 		
+		addMod(new Spectate());
 		addMod(new Brightness());
 		addMod(new Freecam());
 		addMod(new HideNSeek());

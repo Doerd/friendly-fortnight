@@ -18,6 +18,7 @@ public class Freecam extends Module{
 	public void onEnable(){
 		mc.thePlayer.capabilities.allowFlying = true;
 		mc.thePlayer.capabilities.isFlying = true;
+		Doerd.sendMovePackets = false;
 	}
 	
 	public void onUpdate(){
@@ -29,6 +30,8 @@ public class Freecam extends Module{
 			mc.thePlayer.capabilities.allowFlying = false;
 			mc.thePlayer.capabilities.isFlying = false;
 		}
+		
+		Doerd.sendMovePackets = true;
 	}
 	
 }

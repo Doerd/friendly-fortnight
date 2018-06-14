@@ -190,14 +190,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
-    	Boolean sendPackets = true;
-    	for(Module m : Doerd.getModules()){
-    		if(m.isToggled() && m.getName().equals("Freecam")){
-    			sendPackets = false;
-    		}
-    	}
-    	
-    	if(sendPackets){
+    	if(Doerd.sendMovePackets){
 	        boolean flag = this.isSprinting();
 	
 	        if (flag != this.serverSprintState)
