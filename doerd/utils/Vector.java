@@ -16,6 +16,24 @@ public class Vector {
 		this.y = -1*Math.sin(phi);
 		this.z = Math.cos(phi)*Math.cos(theta);
 	}
+	public double getX() {
+		return x;
+	}
+	public void setX(double x) {
+		this.x = x;
+	}
+	public double getY() {
+		return y;
+	}
+	public void setY(double y) {
+		this.y = y;
+	}
+	public double getZ() {
+		return z;
+	}
+	public void setZ(double z) {
+		this.z = z;
+	}
 	public double dotProduct(Vector u) {
 		return this.x*u.x+this.y*u.y+this.z*u.z;
 	}
