@@ -13,12 +13,13 @@ public class Brightness extends Module{
 	}
 	
 	public void onEnable(){
-		previousGamma = mc.gameSettings.gammaSetting;
 		mc.gameSettings.gammaSetting = 100;
+		super.onEnable();
 	}
 	
 	public void onDisable(){
-		mc.gameSettings.gammaSetting = previousGamma;
+		mc.gameSettings.gammaSetting = 1;
+		super.onDisable();
 	}
 
 }

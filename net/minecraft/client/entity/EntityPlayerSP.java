@@ -190,6 +190,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
+    	// movepackets used for freecam purposes
     	if(Doerd.sendMovePackets){
 	        boolean flag = this.isSprinting();
 	
@@ -440,6 +441,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     protected boolean pushOutOfBlocks(double x, double y, double z)
     {
+    	// for freecam purposes
         if (this.noClip)
         {
             return false;
@@ -699,7 +701,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
         {
             this.moveStrafing = this.movementInput.moveStrafe;
             this.moveForward = this.movementInput.moveForward;
-            this.isJumping = this.movementInput.jump;
+            this.setJumping(this.movementInput.jump);
             this.prevRenderArmYaw = this.renderArmYaw;
             this.prevRenderArmPitch = this.renderArmPitch;
             this.renderArmPitch = (float)((double)this.renderArmPitch + (double)(this.rotationPitch - this.renderArmPitch) * 0.5D);

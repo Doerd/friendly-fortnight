@@ -2,6 +2,7 @@ package doerd.main;
 
 import java.util.ArrayList;
 
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.Point;
 
 import doerd.mods.*;
@@ -9,6 +10,9 @@ import doerd.utils.DoublePoint;
 
 public class Doerd {
 	private static ArrayList<Module> mods;
+	
+	public static boolean hasHitGround;
+	
 	public static boolean sendMovePackets;
 	
 	public Doerd(){
@@ -25,6 +29,8 @@ public class Doerd {
 		addMod(new Move(new DoublePoint[]{}, 0f, 0f));
 		addMod(new Autoattack(5, new String[]{}));
 		addMod(new Haggle());
+		addMod(new PerfectJump());
+		addMod(new Automine());
 	}
 	
 	public void addMod(Module m){
@@ -57,5 +63,15 @@ public class Doerd {
 				m.toggle();
 			}
 		}
+	}
+	
+	public static Module getMod(String name){
+		for(Module m : mods){
+			if(m.getName().equals(name)){
+				return m;
+			}
+		}
+		
+		return null;
 	}
 }

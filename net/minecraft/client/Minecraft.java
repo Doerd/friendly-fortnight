@@ -1519,10 +1519,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     private void clickMouse()
     {
+    	// mousetp code
     	boolean teleport = false;
     	double scaling = 0;
     	for(Module m : Doerd.getModules()){
-    		if(m.isToggled() && m.getName().equals("MouseTp")){
+    		if(m.isToggled() && (m instanceof MouseTp)){
     			teleport = true;
     			scaling = ((MouseTp)m).TP_DISTANCE;
     		}
@@ -1534,6 +1535,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     		double newZ = this.thePlayer.posZ + scaling*vec.getZ();
     		this.thePlayer.setPosition(newX, newY, newZ);
     	}
+    	// end mousetp code
     	
         if (this.leftClickCounter <= 0)
         {

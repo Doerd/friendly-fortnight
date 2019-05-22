@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 
 import doerd.main.Doerd;
+import doerd.mods.Freecam;
 import doerd.mods.Module;
 
 import java.util.Collection;
@@ -270,9 +271,10 @@ public abstract class EntityPlayer extends EntityLivingBase
      */
     public void onUpdate()
     {	
+    	// for noclip purposes
         boolean myNoClip = false;
         for(Module m : Doerd.getModules()){
-        	if(m.isToggled() && m.getName().equals("Freecam")){
+        	if(m.isToggled() && (m instanceof Freecam)){
         		myNoClip = true;
         	}
         }
