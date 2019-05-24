@@ -31,7 +31,6 @@ public class Doerd {
 		addMod(new Autoattack(5, new String[]{}));
 		addMod(new Haggle());
 		addMod(new PerfectJump());
-		addMod(new Automine());
 	}
 	
 	public void addMod(Module m){
