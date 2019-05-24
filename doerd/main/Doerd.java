@@ -16,6 +16,7 @@ public class Doerd {
 		sendMovePackets = true;
 		
 		addMod(new MouseTp());
+		addMod(new Automine());
 		addMod(new Spectate());
 		addMod(new Brightness());
 		addMod(new Freecam());
