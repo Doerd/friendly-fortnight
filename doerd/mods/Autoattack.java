@@ -14,7 +14,7 @@ import net.minecraft.util.MovingObjectPosition;
 
 public class Autoattack extends Module{
 
-	private int delay;
+	private int currentDelay;
 	private static int HIT_DELAY;
 	
 	private String[] entitiesToHit;
@@ -23,8 +23,12 @@ public class Autoattack extends Module{
 	public Autoattack(int d, String[] ents) {
 		super("Autoattack", Keyboard.KEY_K, Category.ATTACK);
 		HIT_DELAY = d;
-		this.delay = HIT_DELAY;
+		this.currentDelay = HIT_DELAY;
 		this.entitiesToHit = ents;
+	}
+	
+	public void onEnable(){
+		super.onEnable();
 	}
 	
 	public void onDisable(){
@@ -33,7 +37,7 @@ public class Autoattack extends Module{
 	
 	public void onUpdate(){
 		boolean yesHit = false;
-		if(this.delay <= 0 && mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY){
+		if(this.currentDelay <= 0 && mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY){
 			for(String s : this.entitiesToHit){
 				if(s.equalsIgnoreCase("Player")){
 					yesHit = (mc.objectMouseOver.entityHit instanceof EntityOtherPlayerMP);
@@ -148,17 +152,17 @@ public class Autoattack extends Module{
 			if(yesHit){
 				mc.thePlayer.swingItem();
 				mc.playerController.attackEntity(mc.thePlayer, mc.objectMouseOver.entityHit);
-				this.delay = HIT_DELAY + (int)(Math.random()*3 - 1);
+				this.currentDelay = HIT_DELAY + (int)(Math.random()*3 - 1);
 			}
 		}
 		else{
-			this.delay--;
+			this.currentDelay--;
 		}
 	}
 	
 	public void parseSettings(){
 		String[] arr = this.getSettings().split("\n");
-		this.delay = Integer.parseInt(arr[arr.length-1]);
+		this.currentDelay = Integer.parseInt(arr[arr.length-1]);
 		this.entitiesToHit = Arrays.copyOfRange(arr, 0, arr.length - 1);
 	}
 	

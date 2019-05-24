@@ -61,7 +61,7 @@ public class Module {
             this.settings = content;
         }catch(FileNotFoundException e){
             this.settings = "";
-            e.printStackTrace();
+            System.out.println("no settings file found");
         }catch(Exception e2){
         	e2.printStackTrace();
         }

@@ -34,11 +34,13 @@ public class InfoDisplay extends Module{
         this.mc.fontRendererObj.drawString("Yaw: " + mc.thePlayer.rotationYaw, 2, 100+i, 16777215);
         i += 10;
         //Entity
-        Entity hit = mc.objectMouseOver.entityHit;
-        if (hit != null) {
-	        String entityInfo = String.format("Ent{%s:%d}",hit.getName(),hit.getEntityId());
-	        this.mc.fontRendererObj.drawString(entityInfo, 2, 100+i, 16777215);	
-	        i += 10;
+        if((this.getMc() != null) && (this.getMc().objectMouseOver != null)){
+        	Entity hit = mc.objectMouseOver.entityHit;     
+	        if (hit != null) {
+		        String entityInfo = String.format("Ent{%s:%d}",hit.getName(),hit.getEntityId());
+		        this.mc.fontRendererObj.drawString(entityInfo, 2, 100+i, 16777215);	
+		        i += 10;
+	        }
         }
         if(mc.objectMouseOver.getBlockPos() != null) {
         	BlockPos blockPosition = mc.objectMouseOver.getBlockPos();

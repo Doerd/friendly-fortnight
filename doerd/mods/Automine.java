@@ -26,9 +26,10 @@ public class Automine extends Module {
 		try {
 			blockpos = mc.objectMouseOver.getBlockPos();
 		}
-		catch(Exception e) {
+		catch(NullPointerException e) {
 			System.out.println("CATCH: Automine Bug");
 		}
+
 		if (blockpos != null) {
 	        if (mc.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air && mc.playerController.onPlayerDamageBlock(blockpos, mc.objectMouseOver.sideHit))
 	        {
