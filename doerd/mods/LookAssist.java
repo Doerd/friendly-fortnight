@@ -169,6 +169,13 @@ public class LookAssist extends Module{
 					break;
 				}
 			}
+			if(s.equalsIgnoreCase("Chicken")){
+				if(mc.objectMouseOver.entityHit instanceof EntityChicken){
+					lock = true;
+					entityID = mc.objectMouseOver.entityHit.getEntityId();
+					break;
+				}
+			}
 		}
 	}
 	

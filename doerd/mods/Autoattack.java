@@ -8,6 +8,7 @@ import org.lwjgl.input.Keyboard;
 import doerd.main.Category;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MovingObjectPosition;
 
@@ -97,6 +98,50 @@ public class Autoattack extends Module{
 				if(s.equalsIgnoreCase("Snowman")){
 					yesHit = (mc.objectMouseOver.entityHit instanceof EntitySnowman);
 					if(yesHit){break;}
+				}	
+				if (s.equalsIgnoreCase("Bat")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityBat);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Chicken")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityChicken);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Cow")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityCow);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Mooshroom")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityMooshroom);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Ocelot")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityOcelot);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Pig")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityPig);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Rabbit")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityRabbit);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Sheep")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntitySheep);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Squid")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntitySquid);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Villager")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityVillager);
+					if(yesHit){break;}
+				}
+				if (s.equalsIgnoreCase("Horse")) {
+					yesHit = (mc.objectMouseOver.entityHit instanceof EntityHorse);
+					if(yesHit){break;}	
 				}
 			}
 			

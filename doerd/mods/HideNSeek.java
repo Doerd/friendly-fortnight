@@ -13,6 +13,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.util.MovingObjectPosition;
 
 public class HideNSeek extends Module{
@@ -45,7 +46,6 @@ public class HideNSeek extends Module{
 			else if(e instanceof EntityOtherPlayerMP){
 				RenderUtils.entityESPBox(e, 1);
 			}
-			
 		}
 		
 		super.onRender();
