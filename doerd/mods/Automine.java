@@ -5,6 +5,7 @@ import org.lwjgl.input.Keyboard;
 import doerd.main.Category;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.MovingObjectPosition;
 
 public class Automine extends Module {
 	
@@ -22,15 +23,8 @@ public class Automine extends Module {
 	}
 	
 	public void onUpdate(){
-		BlockPos blockpos = null;
-		try {
-			blockpos = mc.objectMouseOver.getBlockPos();
-		}
-		catch(NullPointerException e) {
-			System.out.println("CATCH: Automine Bug");
-		}
-
-		if (blockpos != null) {
+		if(mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK){
+			BlockPos blockpos = mc.objectMouseOver.getBlockPos();
 	        if (mc.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air && mc.playerController.onPlayerDamageBlock(blockpos, mc.objectMouseOver.sideHit))
 	        {
 	            mc.effectRenderer.addBlockHitEffects(blockpos, mc.objectMouseOver.sideHit);

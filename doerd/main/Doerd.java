@@ -20,18 +20,16 @@ public class Doerd {
 		sendMovePackets = true;
 		
 		addMod(new MouseTp());
-		addMod(new Automine());
-		addMod(new Spectate());
 		addMod(new Brightness());
 		addMod(new Freecam());
 		addMod(new HideNSeek());
 		addMod(new LookAssist(10, 5, new String[]{}));
 		addMod(new InfoDisplay());
-		addMod(new Move(new DoublePoint[]{}, 0f, 0f));
 		addMod(new Autoattack(5, new String[]{}));
 		addMod(new Haggle());
 		addMod(new PerfectJump());
 		addMod(new Automine());
+		addMod(new ToolSwitch());
 	}
 	
 	public void addMod(Module m){
