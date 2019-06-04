@@ -23,13 +23,16 @@ public class Automine extends Module {
 	}
 	
 	public void onUpdate(){
-		if(mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK){
+		try{
 			BlockPos blockpos = mc.objectMouseOver.getBlockPos();
+		
 	        if (mc.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air && mc.playerController.onPlayerDamageBlock(blockpos, mc.objectMouseOver.sideHit))
 	        {
 	            mc.effectRenderer.addBlockHitEffects(blockpos, mc.objectMouseOver.sideHit);
 	            mc.thePlayer.swingItem();
 	        }
+		} catch (NullPointerException e) {
+			System.out.println("null in automine");
 		}
 	}
 }

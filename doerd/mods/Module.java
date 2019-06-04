@@ -3,6 +3,8 @@ package doerd.mods;
 import doerd.constant.UserSpecific;
 import doerd.main.Category;
 import net.minecraft.client.Minecraft;
+import net.minecraft.inventory.IInventory;
+
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -26,8 +28,7 @@ public class Module {
 		toggled = !toggled;
 		if(toggled){
 			onEnable();
-		}
-		else{
+		} else {
 			onDisable();
 		}
 	}
@@ -97,6 +98,11 @@ public class Module {
 
 	public void setToggled(boolean toggled) {
 		this.toggled = toggled;
+		if(toggled){
+			this.onEnable();
+		} else {
+			this.onDisable();
+		}
 	}
 
 	public Category getCategory() {

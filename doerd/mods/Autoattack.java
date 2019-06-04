@@ -27,14 +27,6 @@ public class Autoattack extends Module{
 		this.entitiesToHit = ents;
 	}
 	
-	public void onEnable(){
-		super.onEnable();
-	}
-	
-	public void onDisable(){
-		super.onDisable();
-	}
-	
 	public void onUpdate(){
 		boolean yesHit = false;
 		if(this.currentDelay <= 0 && mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY){
@@ -162,7 +154,10 @@ public class Autoattack extends Module{
 	
 	public void parseSettings(){
 		String[] arr = this.getSettings().split("\n");
-		this.currentDelay = Integer.parseInt(arr[arr.length-1]);
+		for(String s : arr) {
+			s = s.trim();
+		}
+		this.HIT_DELAY = Integer.parseInt(arr[arr.length-1]);
 		this.entitiesToHit = Arrays.copyOfRange(arr, 0, arr.length - 1);
 	}
 	

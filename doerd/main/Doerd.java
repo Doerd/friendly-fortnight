@@ -7,12 +7,11 @@ import org.lwjgl.util.Point;
 
 import doerd.mods.*;
 import doerd.utils.DoublePoint;
+import net.minecraft.client.Minecraft;
+import net.minecraft.inventory.IInventory;
 
 public class Doerd {
 	private static ArrayList<Module> mods;
-	
-	public static boolean hasHitGround;
-	
 	public static boolean sendMovePackets;
 	
 	public Doerd(){
@@ -30,6 +29,10 @@ public class Doerd {
 		addMod(new PerfectJump());
 		addMod(new Automine());
 		addMod(new ToolSwitch());
+		addMod(new AntiCAPTCHA(true));
+		addMod(new BorrowGoods());
+		addMod(new AutoZprint());
+		addMod(new SeriousSeek());
 	}
 	
 	public void addMod(Module m){
